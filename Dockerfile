@@ -1,4 +1,4 @@
-FROM eclipse-temurin:8-jre
-EXPOSE 8082
-ADD target/petclinic.war petclinic.war
-ENTRYPOINT ["java","-jar","/petclinic.war"]
+FROM eclipse-temurin:11-jre-jammy
+EXPOSE 8080
+COPY target/spring-petclinic-*.jar app.jar
+ENTRYPOINT ["java", "-jar", "/app.jar"]
